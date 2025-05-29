@@ -1,0 +1,62 @@
+/* Tema escuro - arquivo separado para facilitar a alternância */
+:root {
+  --bg-main: #101014;
+  --bg-sidebar: #181a20;
+  --bg-conteudo: #181a20;
+  --bg-card: #232634;
+  --bg-input: #232634;
+  --bg-feedback-success: #1e2e1e;
+  --bg-feedback-error: #2e1e1e;
+  --color-text: #f3f6fa;
+  --color-muted: #b0b8c1;
+  --color-primary: #3a6ea8;
+  --color-secondary: #1b263b;
+  --color-success: #4caf50;
+  --color-error: #ff5252;
+  --border-radius: 14px;
+  --shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
+  --transition: 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+/* Estilos específicos para tabela no tema escuro */
+.tabela-resultados th {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.tabela-resultados td {
+  color: var(--color-text);
+  background: var(--bg-card);
+}
+
+.tabela-resultados tr:nth-child(even) td {
+  background: rgba(35, 38, 52, 0.7);
+}
+
+.tabela-resultados tr:hover td {
+  background: #2c3142;
+}
+
+/* Estilos para cabeçalhos ordenados */
+.tabela-resultados th.ordenado-asc::after {
+  content: " ▲";
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+.tabela-resultados th.ordenado-desc::after {
+  content: " ▼";
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* Estilo para mensagem de sem resultados */
+.sem-resultados {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-muted);
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  font-size: 1.1rem;
+}

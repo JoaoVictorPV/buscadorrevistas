@@ -1,0 +1,59 @@
+/* Tema claro - arquivo separado para facilitar a alternância */
+:root {
+  --bg-main: #f5f7fa;
+  --bg-sidebar: #ffffff;
+  --bg-conteudo: #ffffff;
+  --bg-card: #f0f2f5;
+  --bg-input: #ffffff;
+  --bg-feedback-success: #e8f5e9;
+  --bg-feedback-error: #ffebee;
+  --color-text: #333333;
+  --color-muted: #666666;
+  --color-primary: #3a6ea8;
+  --color-secondary: #4a7ab2;
+  --shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+}
+
+/* Estilos específicos para tabela no tema claro */
+.tabela-resultados th {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.tabela-resultados td {
+  color: var(--color-text);
+  background: var(--bg-input);
+  border-color: #e0e0e0;
+}
+
+.tabela-resultados tr:nth-child(even) td {
+  background: #f7f9fc;
+}
+
+.tabela-resultados tr:hover td {
+  background: #e9f0f7;
+}
+
+/* Estilos para cabeçalhos ordenados */
+.tabela-resultados th.ordenado-asc::after {
+  content: " ▲";
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+.tabela-resultados th.ordenado-desc::after {
+  content: " ▼";
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* Estilo para mensagem de sem resultados */
+.sem-resultados {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-muted);
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  font-size: 1.1rem;
+}

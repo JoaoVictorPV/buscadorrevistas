@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Revistas Científicas</title>
+  <style>
+    :root {
+      --bg-main: #101014;
+      --bg-card: #232634;
+      --color-text: #f3f6fa;
+      --color-muted: #b0b8c1;
+      --color-primary: #3a6ea8;
+      --color-secondary: #1b263b;
+      --border-radius: 14px;
+      --shadow: 0 2px 16px 0 rgba(0,0,0,0.18);
+      --transition: 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    
+    body {
+      background: var(--bg-main);
+      color: var(--color-text);
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    
+    h1 {
+      color: var(--color-primary);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: var(--color-muted);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: var(--border-radius);
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background var(--transition);
+    }
+    
+    .btn:hover {
+      background: var(--color-secondary);
+    }
+    
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    
+    .feature {
+      flex: 1 1 200px;
+      background: rgba(0,0,0,0.2);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      text-align: center;
+    }
+    
+    .feature h3 {
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+    
+    .feature p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Buscador de Revistas Científicas</h1>
+    <p>Uma ferramenta robusta para busca de artigos científicos em revistas de ortopedia, radiologia e radiologia musculoesquelética.</p>
+    
+    <a href="frontend/index.html" class="btn">Acessar o Buscador</a>
+    
+    <div class="features">
+      <div class="feature">
+        <h3>Busca Avançada</h3>
+        <p>Operadores booleanos, filtros por data e autor, e seleção de revistas específicas.</p>
+      </div>
+      <div class="feature">
+        <h3>Múltiplas Fontes</h3>
+        <p>Integração com PubMed, Crossref, Semantic Scholar, OpenAlex e Unpaywall.</p>
+      </div>
+      <div class="feature">
+        <h3>Exportação Versátil</h3>
+        <p>Exporte resultados em HTML, PDF, Excel e TXT para facilitar seus estudos.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

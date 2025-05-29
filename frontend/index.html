@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Revistas Científicas</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/tema-escuro.css" id="tema-css">
+  <link rel="icon" type="image/png" href="static/img/favicon.png">
+</head>
+<body class="tema-escuro">
+  <div class="main-layout">
+    <aside class="sidebar">
+      <header>
+        <h1>Buscador de Revistas Científicas</h1>
+        <p class="subtitle">Pesquise artigos em múltiplas bases científicas de forma simples, rápida e visualmente agradável.</p>
+      </header>
+      <form id="form-busca" autocomplete="off">
+        <div class="form-group">
+          <label for="palavras">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2"/><line x1="14.4142" y1="14" x2="18" y2="17.5858" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Palavra-chave
+            <span class="tooltip-container">
+              <button type="button" class="tooltip-icon" aria-label="Ajuda sobre sintaxe de busca" tabindex="0">❓</button>
+              <div class="tooltip-text" role="tooltip" id="tooltip-busca" tabindex="-1">
+                <strong>Sintaxe avançada de busca:</strong><br>
+                <ul>
+                  <li><b>AND</b>: todos os termos obrigatórios<br><span class="exemplo">Ex: diabetes AND insulina</span></li>
+                  <li><b>Frase exata</b>: use aspas<br><span class="exemplo">Ex: "atividade física"</span></li>
+                  <li><b>Excluir termo</b>: use NOT ou -<br><span class="exemplo">Ex: diabetes NOT tipo1 ou diabetes -tipo1</span></li>
+                  <li><b>Combine</b>:<br><span class="exemplo">("atividade física" AND diabetes) NOT tipo1</span></li>
+                </ul>
+              </div>
+            </span>
+          </label>
+          <input type="text" id="palavras" name="palavras" placeholder="Ex: câncer, diabetes..." required>
+        </div>
+        <div class="form-group">
+          <label for="autor">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M2 18c0-3.3137 3.134-6 7-6s7 2.6863 7 6" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            Autor
+          </label>
+          <input type="text" id="autor" name="autor" placeholder="Nome do autor">
+        </div>
+        <div class="form-group">
+          <label>
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 8h14" stroke="currentColor" stroke-width="2"/><rect x="6" y="11" width="2" height="2" rx="1" fill="currentColor"/><rect x="10" y="11" width="2" height="2" rx="1" fill="currentColor"/></svg>
+            </span>
+            Período
+          </label>
+          <div class="periodo-opcoes">
+            <label><input type="radio" name="periodo_opcao" value="1_mes"> 1 mês</label>
+            <label><input type="radio" name="periodo_opcao" value="ultimos_3_meses"> Últimos 3 meses</label>
+            <label><input type="radio" name="periodo_opcao" value="ultimos_6_meses"> Últimos 6 meses</label>
+            <label><input type="radio" name="periodo_opcao" value="ultimo_ano"> Último ano</label>
+            <label><input type="radio" name="periodo_opcao" value="ultimos_2_anos"> Últimos 2 anos</label>
+            <label><input type="radio" name="periodo_opcao" value="personalizado" checked> Personalizado</label>
+          </div>
+          <div class="periodo-intervalo">
+            <input type="date" id="periodo_inicio" name="periodo_inicio" placeholder="Início">
+            <span class="ate">até</span>
+            <input type="date" id="periodo_fim" name="periodo_fim" placeholder="Fim">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="revista">
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 3v14" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            Revistas
+          </label>
+          <select id="revista" name="revista" multiple size="10">
+            <option value="">Carregando revistas...</option>
+          </select>
+        </div>
+        <div class="form-group" id="grupo-limite-resultados">
+          <label>
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/><line x1="6" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="2"/><line x1="6" y1="12" x2="14" y2="12" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            Máximo de resultados por base
+          </label>
+          <div class="limite-opcoes">
+            <label><input type="radio" name="limite_resultados" value="30" checked> 30</label>
+            <label><input type="radio" name="limite_resultados" value="60"> 60</label>
+            <label><input type="radio" name="limite_resultados" value="90"> 90</label>
+            <label><input type="radio" name="limite_resultados" value="120"> 120</label>
+            <label>
+              <input type="radio" name="limite_resultados" value="personalizado"> 
+              Personalizado
+              <input type="number" id="input-limite-personalizado" name="limite_resultados_personalizado" min="1" max="1000" style="width:70px;" disabled>
+            </label>
+          </div>
+        </div>
+        <div class="form-group botoes">
+          <button type="submit" id="btn-buscar" class="btn-principal">
+            <span class="icon">
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="7" stroke="#fff" stroke-width="2"/><line x1="14.4142" y1="14" x2="18" y2="17.5858" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            Buscar
+          </button>
+          <button type="reset" id="btn-limpar" class="btn-secundario">Limpar</button>
+        </div>
+        <div id="mensagem-feedback" style="display:none;"></div>
+      </form>
+      <div class="tema-toggle">
+        <button id="btn-alternar-tema" class="btn-tema">
+          <span class="icon-tema-claro">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </span>
+          <span class="icon-tema-escuro">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+        </button>
+      </div>
+    </aside>
+    <main class="conteudo">
+      <section id="resultados">
+        <h2>
+          Resultados
+          <span id="result-count" class="badge-resultados" style="display:none"></span>
+        </h2>
+        <div class="acoes-resultados">
+          <div class="exportar-opcoes">
+            <button type="button" id="btn-exportar-html" class="btn-exportar" title="Exportar tabela em HTML">
+              <span class="icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3v10m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/></svg>
+              </span>
+              HTML
+            </button>
+            <button type="button" id="btn-exportar-pdf" class="btn-exportar" title="Exportar tabela em PDF">
+              <span class="icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3v10m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/></svg>
+              </span>
+              PDF
+            </button>
+            <button type="button" id="btn-exportar-excel" class="btn-exportar" title="Exportar tabela em Excel">
+              <span class="icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3v10m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/></svg>
+              </span>
+              Excel
+            </button>
+            <button type="button" id="btn-exportar-txt" class="btn-exportar" title="Exportar tabela em TXT">
+              <span class="icon">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3v10m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="15" width="14" height="2" rx="1" fill="currentColor"/></svg>
+              </span>
+              TXT
+            </button>
+          </div>
+        </div>
+        <div id="loading" style="display:none;">
+          <div class="spinner"></div>
+          <div class="loading-text">Buscando...</div>
+        </div>
+        <div id="tabela-resultados"></div>
+      </section>
+    </main>
+  </div>
+  <script src="static/js/temas.js"></script>
+  <script src="static/js/app.js"></script>
+  <script src="static/js/busca.js"></script>
+  <script src="static/js/resultados.js"></script>
+  <script src="static/js/exportacao.js"></script>
+</body>
+</html>
