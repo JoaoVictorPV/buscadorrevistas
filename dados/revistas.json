@@ -1,0 +1,122 @@
+[
+  {
+    "id": "thieme_connect",
+    "nome": "Thieme Connect",
+    "issn": "0000-0070",
+    "especialidade": "Radiologia e Ortopedia",
+    "url": "https://www.thieme-connect.com/products/ejournals/journal/10.1055/s-00000070",
+    "descricao": "Plataforma da Thieme que abrange diversas revistas científicas de radiologia e ortopedia."
+  },
+  {
+    "id": "ajr",
+    "nome": "American Journal of Roentgenology (AJR)",
+    "issn": "0361-803X",
+    "especialidade": "Radiologia",
+    "url": "https://www.ajronline.org",
+    "descricao": "Revista científica líder em radiologia diagnóstica, intervencionista e relacionada à imagem."
+  },
+  {
+    "id": "radiographics",
+    "nome": "RadioGraphics",
+    "issn": "0271-5333",
+    "especialidade": "Radiologia",
+    "url": "https://pubs.rsna.org/journal/radiographics",
+    "descricao": "Revista educacional da Radiological Society of North America (RSNA)."
+  },
+  {
+    "id": "radiology",
+    "nome": "Radiology",
+    "issn": "0033-8419",
+    "especialidade": "Radiologia",
+    "url": "https://pubs.rsna.org/journal/radiology",
+    "descricao": "Revista científica da Radiological Society of North America (RSNA)."
+  },
+  {
+    "id": "jbjs",
+    "nome": "The Journal of Bone and Joint Surgery",
+    "issn": "0021-9355",
+    "especialidade": "Ortopedia",
+    "url": "https://journals.lww.com/jbjsjournal",
+    "descricao": "Uma das revistas mais respeitadas em ortopedia e cirurgia ortopédica."
+  },
+  {
+    "id": "corr",
+    "nome": "Clinical Orthopaedics and Related Research",
+    "issn": "0009-921X",
+    "especialidade": "Ortopedia",
+    "url": "https://journals.lww.com/clinorthop",
+    "descricao": "Revista científica focada em pesquisa ortopédica e clínica."
+  },
+  {
+    "id": "jmri",
+    "nome": "Journal of Magnetic Resonance Imaging",
+    "issn": "1053-1807",
+    "especialidade": "Radiologia Musculoesquelética",
+    "url": "https://onlinelibrary.wiley.com/journal/10531807",
+    "descricao": "Revista especializada em ressonância magnética e suas aplicações clínicas."
+  },
+  {
+    "id": "skeletal_radiol",
+    "nome": "Skeletal Radiology",
+    "issn": "0364-2348",
+    "especialidade": "Radiologia Musculoesquelética",
+    "url": "https://www.springer.com/journal/256",
+    "descricao": "Revista internacional dedicada à radiologia musculoesquelética."
+  },
+  {
+    "id": "ejr",
+    "nome": "European Journal of Radiology",
+    "issn": "0720-048X",
+    "especialidade": "Radiologia",
+    "url": "https://www.ejradiology.com",
+    "descricao": "Revista científica europeia de radiologia geral e especializada."
+  },
+  {
+    "id": "bjr",
+    "nome": "British Journal of Radiology",
+    "issn": "0007-1285",
+    "especialidade": "Radiologia",
+    "url": "https://www.birpublications.org/journal/bjr",
+    "descricao": "Revista internacional publicada pelo British Institute of Radiology."
+  },
+  {
+    "id": "jcat",
+    "nome": "Journal of Computer Assisted Tomography",
+    "issn": "0363-8715",
+    "especialidade": "Radiologia",
+    "url": "https://journals.lww.com/jcat",
+    "descricao": "Revista focada em tomografia computadorizada e outras técnicas de imagem avançadas."
+  },
+  {
+    "id": "acta_orthop",
+    "nome": "Acta Orthopaedica",
+    "issn": "1745-3674",
+    "especialidade": "Ortopedia",
+    "url": "https://www.tandfonline.com/journals/iort20",
+    "descricao": "Revista científica internacional de ortopedia e traumatologia."
+  },
+  {
+    "id": "jor",
+    "nome": "Journal of Orthopaedic Research",
+    "issn": "0736-0266",
+    "especialidade": "Ortopedia",
+    "url": "https://onlinelibrary.wiley.com/journal/1554527x",
+    "descricao": "Revista oficial da Orthopaedic Research Society."
+  },
+  {
+    "id": "ajsm",
+    "nome": "American Journal of Sports Medicine",
+    "issn": "0363-5465",
+    "especialidade": "Ortopedia Esportiva",
+    "url": "https://journals.sagepub.com/home/ajs",
+    "descricao": "Revista líder em medicina esportiva e ortopedia relacionada ao esporte."
+  },
+  {
+    "id": "jus",
+    "nome": "Journal of Ultrasound in Medicine",
+    "issn": "0278-4297",
+    "especialidade": "Radiologia",
+    "url": "https://onlinelibrary.wiley.com/journal/15509613",
+    "descricao": "Revista oficial da American Institute of Ultrasound in Medicine."
+  }
+]
